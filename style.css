@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap");
+
+:root {
+  --color-1: #8cff98ff;
+  --color-2: #aad922ff;
+  --color-3: #6f7c12ff;
+  --color-4: #483519ff;
+  --color-5: #000000ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  font-size: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: var(--color-1);
+}
+
+header .container {
+  margin-top: 1.7rem;
+}
+
+h1 {
+  font-size: 5rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 6rem;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--color-4);
+  cursor: pointer;
+}
+
+.container {
+  width: 84%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons-wrapper {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-areas:
+    "choose choose"
+    "human cpu"
+    "start start";
+  column-gap: 2.5rem;
+  row-gap: 2rem;
+}
+
+.buttons-wrapper button {
+  width: 10.45rem;
+  height: 4.2rem;
+  background-color: var(--color-2);
+  color: white;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 900;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+#choose-text {
+  grid-area: choose;
+  /* margin-bottom: 1rem; */
+
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 3rem;
+
+  color: #483519;
+  text-align: center;
+}
+
+#human-btn {
+  grid-area: human;
+}
+
+#cpu-btn {
+  grid-area: cpu;
+}
+
+#start-btn {
+  grid-area: start;
+  justify-self: center;
+  background-color: var(--color-3);
+}
+
+#human-btn.choosed,
+#cpu-btn.choosed {
+  background-color: var(--color-4);
+}
+
+#board {
+  margin-top: 0.48rem;
+}
+
+#board .spots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+#board .players {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: rgba(111, 124, 18, 0.5);
+}
+
+#board .players .restart {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+
+  background-color: transparent;
+  color: var(--color-3);
+
+  cursor: pointer;
+}
+
+#board .players .restart:hover {
+  font-weight: 900;
+}
+
+#board .players .active {
+  color: #483519;
+}
+
+.spot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 7rem;
+  background-color: var(--color-2);
+  color: var(--color-4);
+  cursor: pointer;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 6rem;
+}
+
+.spot:hover {
+  filter: brightness(1.2);
+}
+
+.result {
+  width: 24rem;
+  height: 5rem;
+  transform: translateY(10.5rem);
+  position: absolute;
+  z-index: 1;
+
+  background-color: var(--color-5);
+  color: white;
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fade-in {
+  animation: fade-in 0.5s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
